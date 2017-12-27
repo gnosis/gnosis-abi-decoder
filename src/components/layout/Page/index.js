@@ -1,13 +1,19 @@
+import classNames from 'classnames/bind'
 import React from 'react';
 import logo from './logo.svg';
+import * as css from './index.css'
+
+const cx = classNames.bind(css)
 
 const Page = ({title, children}) => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">{title}</h1>
+  <div>
+    <header className={cx('header')}>
+      <img src={logo} className={cx('logo')} alt="logo" />
+      <h1 className={cx('title')}>{title}</h1>
     </header>
-    { children }
+    <div className={cx('page')}>
+      { children }
+    </div>
   </div>
 )
 

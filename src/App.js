@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import ReactJson from 'react-json-view'
 import abiDecoder from './abi'
 import web3 from './web3'
-import './App.css';
 
 // const txHash = '0x4b6189fd751c7f134393e2ac6d8c94f3956af335425b2788cbc3518d47a4ba1d';
 
