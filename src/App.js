@@ -45,7 +45,7 @@ class App extends Component {
 
         const decodedInst =  abiDecoder.decodeMethod(txResult.input);
         const decodedFinal = abiDecoder.decodeMethod(decodedInst.params[3].value);
-        return this.updateStateWith(index, decodedFinal)        
+        return this.updateStateWith(index, { id: tx, ...decodedFinal,  })        
       })
     });
   }
