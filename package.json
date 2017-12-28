@@ -1,7 +1,6 @@
 {
   "name": "gnosis-abi-decoder",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "abi-decoder": "ConsenSys/abi-decoder",
     "classnames": "^2.2.5",
