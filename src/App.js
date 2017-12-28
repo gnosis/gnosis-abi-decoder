@@ -1,12 +1,13 @@
-import { Map, List } from 'immutable'
-import React, { Component } from 'react'
-import ReactJson from 'react-json-view'
-import abiDecoder from './abi'
-import HashForm from './components/HashForm'
-import Page from './components/layout/Page'
-import web3 from './web3'
+import { Map, List } from 'immutable';
+import React, { Component } from 'react';
+import ReactJson from 'react-json-view';
+import abiDecoder from './abi';
+import HashForm from './components/HashForm';
+import Page from './components/layout/Page';
+import Pagination from './components/Pagination';
+import web3 from './web3';
 
-// const txHash = '0x4b6189fd751c7f134393e2ac6d8c94f3956af335425b2788cbc3518d47a4ba1d';
+// const txHash = '0x4b6189fd751c7f134393e2ac6d8c94f3956af335425b2788cbc3518d47a4ba1d, 0x7a7d58ac47fba942dbd902c2ad4f6911de3a12d4019c20f51a488b9daaee3138';
 
 class App extends Component {
 
@@ -49,10 +50,16 @@ class App extends Component {
     });
   }
 
+  pageChange = (data) => {
+    this.setState((prevState) => ({
+      txPosition: data.selected,
+    }));
+  }
+
   render() {
     const { data, txPosition } = this.state
     const transaction = data.get('txs').get(txPosition)
-
+    const pagesNumber = data.get('txCounter')
     const intro = "To get started, paste a single transaction or set of them separated by ','"
 
     return (
@@ -62,9 +69,9 @@ class App extends Component {
         <HashForm
           intro={intro}
           handleSubmit={this.decodeTransaction}
-        />        
+        />
+        { transaction && <Pagination onPageChange={ this.pageChange } pagesNumber={ pagesNumber } /> }
         { transaction && <ReactJson src={transaction} /> }
-        
       </Page>
     );
   }
