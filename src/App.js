@@ -1,3 +1,4 @@
+import HashForm from './components/HashForm'
 import Page from './components/layout/Page'
 import React, { Component } from 'react';
 import ReactJson from 'react-json-view'
@@ -12,39 +13,29 @@ class App extends Component {
     super(props)
     this.state = {
       transaction: undefined,
-      value: '',
     }
   }
 
-  handleChange = (event) => {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit = (event) => {
-    const txHash = this.state.value;
-    
+  decodeTransaction = (txHash) => {
     web3.eth.getTransaction(txHash, (error, txResult) => {
       const decodedInst =  abiDecoder.decodeMethod(txResult.input);
       const decodedFinal = abiDecoder.decodeMethod(decodedInst.params[3].value);
       this.setState({transaction: decodedFinal})
     });
-    event.preventDefault();
   }
 
   render() {
-    const { transaction, value } = this.state
+    const { transaction } = this.state
+    const intro = "To get started, paste a single transaction or set of them separated by ','"
 
     return (
       <Page
         title="Welcome to Gnosis ABI Decoder"
       >
-        <form onSubmit={this.handleSubmit}>
-          <p className="App-intro">
-            To get started, paste a single transaction or set of them separated by ','
-          </p>
-          <input type="text" value={value} onChange={this.handleChange} />
-          <input type="submit" value="Submit" />
-        </form>
+        <HashForm
+          intro={intro}
+          handleSubmit={this.decodeTransaction}
+        />        
         { transaction && <ReactJson src={transaction} /> }
       </Page>
     );
