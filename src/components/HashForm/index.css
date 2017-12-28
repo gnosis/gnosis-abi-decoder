@@ -1,0 +1,25 @@
+.form {
+  margin: 10px 0px 25px 0px;
+}
+
+.text {
+  width: 425px;
+  outline: none;
+  height: 25px;
+  padding: 0 5px;
+}
+
+.submit {
+  height: 30px;
+  padding: 0 5px;
+  border-radius: 4px;
+  margin: 0px 10px;
+  background-color: #009CBC;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.submit:hover {
+  cursor: pointer; 
+}

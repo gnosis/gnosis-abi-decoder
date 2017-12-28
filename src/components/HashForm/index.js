@@ -1,4 +1,8 @@
+import classNames from 'classnames/bind';
 import React from 'react';
+import * as css from './index.css';
+
+const cx = classNames.bind(css)
 
 class HashForm extends React.Component {
   
@@ -24,12 +28,12 @@ class HashForm extends React.Component {
     const { intro } = this.props;
 
     return (
-      <form onSubmit={this.onFormSubmit}>
-        <p className="App-intro">
+      <form className={cx('form')} onSubmit={this.onFormSubmit}>
+        <p>
           { intro }
         </p>
-        <input type="text" value={value} onChange={this.handleChange} />
-        <input type="submit" value="Submit" />
+        <input className={cx('text')} type="text" value={value} onChange={this.handleChange} />
+        <button className={cx('submit')} type="submit">DECODE</button>
       </form> 
     )    
   } 
