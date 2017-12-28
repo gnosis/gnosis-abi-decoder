@@ -5,6 +5,7 @@
   "dependencies": {
     "abi-decoder": "ConsenSys/abi-decoder",
     "classnames": "^2.2.5",
+    "immutable": "^3.8.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-json-view": "^1.14.3",
