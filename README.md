@@ -4,7 +4,7 @@ This is a simple project for decoding blockchain transactions.
 
 As version 0.1.0 we decode:
 * uport transactions  
-* transactions agains gnosis smartcontracts
+* transactions against gnosis smartcontracts (safe-contracts and pm-contracts)
 
 ## Usage
 1. Fork the project
