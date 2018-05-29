@@ -14,6 +14,27 @@ const gnosisABIs = [
     require('@gnosis.pm/gnosis-core-contracts/build/contracts/EventFactory.json'),
     require('@gnosis.pm/gnosis-core-contracts/build/contracts/LMSRMarketMaker.json'),
     require('@gnosis.pm/gnosis-core-contracts/build/contracts/Math.json'),
+    require('./safe-contracts/build/contracts/CreateAndAddModules.json'),
+    require('./safe-contracts/build/contracts/DailyLimitModule.json'),
+    require('./safe-contracts/build/contracts/DelegateConstructorProxy.json'),
+    require('./safe-contracts/build/contracts/ERC20Token.json'),
+    require('./safe-contracts/build/contracts/Enum.json'),
+    require('./safe-contracts/build/contracts/GnosisSafe.json'),
+    require('./safe-contracts/build/contracts/GnosisSafePersonalEdition.json'),
+    require('./safe-contracts/build/contracts/GnosisSafeTeamEdition.json'),
+    require('./safe-contracts/build/contracts/MasterCopy.json'),
+    require('./safe-contracts/build/contracts/Migrations.json'),
+    require('./safe-contracts/build/contracts/Module.json'),
+    require('./safe-contracts/build/contracts/ModuleManager.json'),
+    require('./safe-contracts/build/contracts/MultiSend.json'),
+    require('./safe-contracts/build/contracts/OwnerManager.json'),
+    require('./safe-contracts/build/contracts/PayingProxy.json'),
+    require('./safe-contracts/build/contracts/Proxy.json'),
+    require('./safe-contracts/build/contracts/ProxyFactory.json'),
+    require('./safe-contracts/build/contracts/SelfAuthorized.json'),
+    require('./safe-contracts/build/contracts/SocialRecoveryModule.json'),
+    require('./safe-contracts/build/contracts/StateChannelModule.json'),
+    require('./safe-contracts/build/contracts/WhitelistModule.json')
 ].map(({ abi }) => abi)
 
 abiDecoder.addABI(uportAbi)
